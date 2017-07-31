@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.mapper.testMapper">
-    <select id="insertTest" parameterType="pojo.Test">
-        INSERT INTO test(SFZHM, WHCD, XM, NICKNAME) VALUES (#{SFZHM}, #{WHCD}, #{XM}, #{NICKNAME})
+
+    <insert id="insertTest" parameterType="pojo.Test">
+        INSERT INTO test(SFZHM, WHCD, XM, NICKNAME)
+        VALUES (#{SFZHM}, #{WHCD}, #{XM}, #{NICKNAME})
+    </insert>
+
+    <!--查询内容-->
+    <select id="selectTest" parameterType="java.lang.String" resultType="pojo.Test">
+        select SFZHM, WHCD, XM, NICKNAME from test;
+    </select>
+
+    <!--查询表中字段-->
+    <select id="showColumns" parameterType="pojo.Test" resultType="String">
+        show columns from test;
     </select>
 </mapper>
