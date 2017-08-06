@@ -1,3 +1,4 @@
+import queryservice.ConnDB;
 
 /**
  * Author : Lunch
@@ -5,7 +6,8 @@
  */
 public class DataFromGAT {
   public static void main(String[] args){
-
+    ConnDB con = new ConnDB();
+    con.conn();
 
 /*  String XSJJQuery = "SFZHM LIKE '520423%'";
     XSJJQueryService xsjj = new XSJJQueryService(XSJJQuery,false);
