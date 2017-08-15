@@ -1,7 +1,5 @@
 package queryservice;
 
-import com.mysql.cj.api.mysqla.result.Resultset;
-
 import java.sql.*;
 
 /**
@@ -10,34 +8,52 @@ import java.sql.*;
  * 与数据库操作
  */
 public class ConnDB {
-  static final String JDBC_DRIVE = "com.mysql.jdbc.drive";
+  static final String JDBC_DRIVE = "com.mysql.cj.jdbc.drive";
   static final String DB_URL = "jdbc:mysql://localhost/DataFromGAT?characterEncoding=utf8&useSSL=true";
 
   static final String USER = "lunch650";
   static final String PASS = "lunch650";
 
-  public static void conn(){
+  public static void getColumns(String tableName){
     Connection conn = null;
-    Statement stt = null;
-    try {
+    Statement statement = null;
+    String sql = "Show COLUMNS From"+tableName+";";
+    ResultSet resultSet;
+    String[] columns;
+    try{
       Class.forName("com.mysql.cj.jdbc.Driver");
-      System.out.println("try database");
-      conn = DriverManager.getConnection(DB_URL,USER,PASS);
-    }catch (Exception e){
+    }catch (ClassNotFoundException e){
       e.printStackTrace();
     }
+
     try {
-      stt = conn.createStatement();
-      String sql = "Show COLUMNS From test;";
-      ResultSet resultset = stt.executeQuery(sql);
-      while(resultset.next()){
-        System.out.println(resultset.getString("Field"));
-      }
-      resultset.close();
-      stt.close();
-      conn.close();
+      conn = DriverManager.getConnection(DB_URL,USER,PASS);
+    }catch (SQLException e){
+      e.printStackTrace();
+    }
+
+    try{
+      statement = conn.createStatement();
     }catch (Exception e) {
       e.printStackTrace();
     }
+
+    try{
+      resultSet = statement.executeQuery(sql);
+      while (resultSet.next()) {
+        System.out.println(resultSet.getString("Field"));
+      }
+      resultSet.close();
+    }catch (SQLException e){
+      e.getSQLState();
+    }
+
+    try{
+      statement.close();
+      conn.close();
+    }catch (Exception e){
+      e.printStackTrace();
+    }
+
   }
 }
