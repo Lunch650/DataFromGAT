@@ -14,7 +14,7 @@ public class PADJBQueryService extends BaseQueryService{
     
     public PADJBQueryService(){
         SRmessage srm = new SRmessage();
-        PADJBArgs.put("name", "(刑事)破案登记表数据查询服务");
+        PADJBArgs.put("name", "破案");
         PADJBArgs.put("wsUrl", "http://10.160.25.92:9001/basic/services/standardSinoService");
         PADJBArgs.put("FWBS", "SZAG52000022000000791");
         PADJBArgs.put("FWDYID", "S0000-00001156");

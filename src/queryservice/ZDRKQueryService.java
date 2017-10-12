@@ -14,7 +14,7 @@ public class ZDRKQueryService extends BaseQueryService{
     
     public ZDRKQueryService(){
         SRmessage srm = new SRmessage();
-        ZDRKArgs.put("name", "重点人口(社区警务)数据查询服务");
+        ZDRKArgs.put("name", "重点");
         ZDRKArgs.put("wsUrl", "***s");
         ZDRKArgs.put("FWBS", "SZNB52000022000000659");
         ZDRKArgs.put("FWDYID", "S0000-00000301");

@@ -15,7 +15,7 @@ public class XSJJQueryService extends BaseQueryService {
     
     public XSJJQueryService() {
         SRmessage srm = new SRmessage();
-        XSJJArgs.put("name", "贵州省刑释解教人员基本信息查询服务");
+        XSJJArgs.put("name", "刑释解教");
         XSJJArgs.put("wsUrl", "***");
         XSJJArgs.put("FWBS", "SZNB52000022000000613");
         XSJJArgs.put("FWDYID", "S0000-00000950");

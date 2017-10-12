@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis2-adb-1.402.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis2-kernel-1.402.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-dbcp2-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dom4j-1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

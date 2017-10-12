@@ -14,7 +14,7 @@ public class LAJDSQueryService extends BaseQueryService{
     
     public LAJDSQueryService(){
         SRmessage srm = new SRmessage();
-        LAJDSArgs.put("name", "(刑事)立案决定书数据查询服务");
+        LAJDSArgs.put("name", "立案决定书");
         LAJDSArgs.put("wsUrl", "***");
         LAJDSArgs.put("FWBS", "SZAG52000022000000792");
         LAJDSArgs.put("FWDYID", "S0000-00001155");
